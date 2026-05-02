@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Usuario - Auth App</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="dashboard-header">
+            <h1>Dashboard Usuario</h1>
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">U</div>
+                <div>
+                    <div id="userName">Cargando...</div>
+                    <div style="font-size: 0.8rem; color: var(--text-light);">Usuario</div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="/user-dashboard" class="active">Inicio</a></li>
+                <li><a href="/admin-dashboard" onclick="goToAdmin(event)">Admin</a></li>
+                <li><a href="/profile">Mi Cuenta</a></li>
+                <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+
+        <div class="welcome-section">
+            <h2>¡Bienvenido de vuelta!</h2>
+            <p>Aquí están tus datos y opciones disponibles</p>
+        </div>
+
+        <section class="account-summary">
+            <div class="summary-row">
+                <span>Correo electrónico</span>
+                <strong id="userEmail">-</strong>
+            </div>
+            <div class="summary-row">
+                <span>Teléfono</span>
+                <strong id="userPhone">-</strong>
+            </div>
+            <div class="summary-row">
+                <span>Edad</span>
+                <strong id="userAge">-</strong>
+            </div>
+            <div class="summary-row">
+                <span>Rol</span>
+                <strong id="userRole">Usuario</strong>
+            </div>
+        </section>
+
+        <div class="dashboard-action">
+            <p>
+                ¿Quieres actualizar tu información?
+                <a href="/profile">Ve a Mi Cuenta</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="/utils.js"></script>
+    <script src="/user-dashboard.js"></script>
+</body>
+</html>

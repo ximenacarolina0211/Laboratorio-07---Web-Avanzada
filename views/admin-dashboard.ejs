@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrador - Auth App</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="dashboard-header">
+            <h1>Dashboard Administrador</h1>
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">A</div>
+                <div>
+                    <div id="userName">Cargando...</div>
+                    <div style="font-size: 0.8rem; color: var(--text-light);">Administrador</div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="/admin-dashboard" class="active">Usuarios</a></li>
+                <li><a href="/profile">Mi Cuenta</a></li>
+                <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+
+        <div class="welcome-section">
+            <h2>Gestión de Usuarios</h2>
+            <p>Visualiza y gestiona todos los usuarios del sistema</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3 id="totalUsers">0</h3>
+                <p>Total de Usuarios</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="adminUsers">0</h3>
+                <p>Administradores</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="regularUsers">0</h3>
+                <p>Usuarios Regulares</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="newUsersToday">0</h3>
+                <p>Nuevos Hoy</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Lista de Usuarios</h3>
+            <div style="overflow-x: auto;">
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Teléfono</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Roles</th>
+                            <th>Fecha Registro</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <tr>
+                            <td colspan="8" style="text-align: center; padding: 2rem;">
+                                Cargando usuarios...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <button class="btn" onclick="refreshUsers()">Actualizar Lista</button>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="userModal" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="userModalTitle">
+            <div class="modal-header">
+                <h2 id="userModalTitle">Información del usuario</h2>
+                <button type="button" class="modal-close" onclick="closeUserModal()" aria-label="Cerrar">&times;</button>
+            </div>
+            <div class="modal-body" id="userModalBody"></div>
+        </div>
+    </div>
+
+    <script src="/utils.js"></script>
+    <script src="/admin-dashboard.js"></script>
+</body>
+</html>
